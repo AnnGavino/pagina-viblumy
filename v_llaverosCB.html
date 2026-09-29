@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viblumy</title>
+  <link rel="icon" href="images/viblumy_icon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="./images/viblumy_icon.png" alt="Logo">
+    <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+    <nav class="nav" id="nav">
+      <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#catalogo">Crea tu Viblumy</a></li>
+        <li><a href="v_disponib.html">Disponible ahora</a></li>
+        <li><a href="v_contact.html">Contacto/Pedidos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="personalizador-wrapper">
+    <!-- COLUMNA IZQUIERDA: LIENZO Y PREVISUALIZACIÓN -->
+    <section class="lienzo-seccion">
+      <h3 class="titulo-lienzo">Crea tu accesorio</h3>
+      <div class="lienzo-contenedor">
+        <!-- Foto de la base seleccionada -->
+        <img id="pulsera-actual" src="images/pulsera.png" alt="Base Llavero" class="img-base">
+      </div>
+    </section>
+
+    <!-- TICKET FLOTANTE / LATERAL (INICIALIZADO VACÍO) -->
+    <aside class="ticket-sección">
+      <div class="ticket-flotante">
+        <div class="ticket-contenido">
+          <h3>Tu pedido</h3>
+
+          <div id="lista-pedido"></div>
+
+          <div class="ticket-total">
+            <strong>Total: <span id="precio-total">$0 MXN</span></strong>
+          </div>
+
+          <button id="btn-whatsapp" class="btn-finalizar">
+            Finalizar pedido por WhatsApp
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLUMNA DERECHA: PANEL DE OPCIONES -->
+    <section class="panel-seccion">
+
+      <!-- 1. SELECCIONAR BASE DE LLAVERO -->
+      <div class="bloque-opcion">
+        <h3 class="subtitulo-seccion">Paso 1: Elige tu base</h3>
+        <div class="pulsera-grid">
+          <!-- Llavero Base 1 -->
+          <div class="tarjeta-pulsera" data-nombre="Llavero Clásico" data-estilo="clasica" data-img="images/pulsera.png"
+            data-tipo="llavero">
+            <img src="images/pulsera.png" alt="Llavero Clásico">
+            <p class="nombre">Llavero Clásico</p>
+            <p class="precio">$100 MXN</p>
+          </div>
+          <!-- Llavero Base 2 -->
+          <div class="tarjeta-pulsera" data-nombre="Llavero Rectangular" data-estilo="rectangular"
+            data-img="images/pulsera2.png" data-tipo="llavero">
+            <img src="images/pulsera2.png" alt="Llavero Rectangular">
+            <p class="nombre">Llavero Rectangular</p>
+            <p class="precio">$90 MXN</p>
+          </div>
+        </div>
+      </div> <!-- Fin Paso 1 -->
+
+      <!-- 2. SELECCIONAR CHARMS -->
+      <div class="bloque-opcion">
+        <h3 class="subtitulo-seccion">Paso 2: Selecciona tus charms</h3>
+
+        <div class="filtros-contenedor">
+          <!-- Pestañas Principales (Categorías) -->
+          <div class="pestañas-categorias">
+            <button class="btn-cat activa" data-cat="todos">Todos</button>
+            <button class="btn-cat" data-cat="identidad">Identidad Personal</button>
+            <button class="btn-cat" data-cat="gustos">Mis Gustos</button>
+            <button class="btn-cat" data-cat="sueños">Mis Sueños</button>
+            <button class="btn-cat" data-cat="favoritos">Favoritos</button>
+            <button class="btn-cat" data-cat="estilo">Mi Estilo</button>
+            <button class="btn-cat" data-cat="especial">Especial</button>
+          </div>
+
+          <!-- Cuadrícula de charms -->
+          <div class="charm-grid" id="catalogo-charms">
+            <!-- Dijes de Iniciales -->
+            <div class="tarjeta-charm" data-id="charm-A" data-nombre="Charm letra A" data-cat="identidad"
+              data-sub="iniciales" data-img="images/flor_dije.png">
+              <img src="images/flor_dije.png" alt="letra A">
+              <p class="nombre">Charm letra A</p>
+              <p class="precio">$90 MXN</p>
+
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes de Signos Zodiacales -->
+            <div class="tarjeta-charm" data-id="charm-Gemini" data-nombre="Charm Gemini" data-cat="identidad"
+              data-sub="zodiaco" data-img="images/cafe_dije.png">
+              <img src="images/cafe_dije.png" alt="Gemini">
+              <p class="nombre">Charm Gemini</p>
+              <p class="precio">$80 MXN</p>
+
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes de Símbolos -->
+            <div class="tarjeta-charm" data-id="charm-Musica" data-nombre="Charm Musica" data-cat="gustos"
+              data-sub="musica" data-img="images/cafe_dije.png">
+              <img src="images/cafe_dije.png" alt="Musica">
+              <p class="nombre">Charm Música</p>
+              <p class="precio">$60 MXN</p>
+
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+          </div> <!-- Fin catalogo-charms -->
+        </div> <!-- Fin filtros-contenedor -->
+      </div> <!-- Fin Paso 2 -->
+
+    </section> <!-- Fin panel-seccion -->
+
+  </main>
+
+  <script src="script.js"></script>
+
+  <div style="height: 120px;"></div>
+  <div style="height: 20vh; min-height: 140px;"></div>
+</body>
+
+</html>

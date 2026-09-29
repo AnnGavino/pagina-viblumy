@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viblumy</title>
+    <link rel="icon" href="images/viblumy_icon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="./images/viblumy_icon.png" alt="Logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#catalogo">Crea tu Viblumy</a></li>
+                <li><a href="v_disponib.html">Disponible ahora</a></li>
+                <li><a href="v_contact.html">Contacto/Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="personalizador-wrapper">
+        <!-- COLUMNA IZQUIERDA: LIENZO Y PREVISUALIZACIÓN -->
+        <section class="lienzo-seccion">
+            <h3 class="titulo-lienzo">Crea tu accesorio</h3>
+            <div class="lienzo-contenedor">
+                <img id="pulsera-actual" src="images/pulsera.png" alt="Pulsera Clasica" class="img-base">
+            </div>
+        </section>
+
+        <aside class="ticket-sección">
+            <div class="ticket-flotante">
+                <div class="ticket-contenido">
+                    <h3>Tu pedido</h3>
+                    <div id="lista-pedido">
+                        <!-- Aquí JS agregará la base y el patrón de chaquiras -->
+                    </div>
+                    <div class="ticket-total">
+                        <strong>Total: <span id="precio-total">$0 MXN</span></strong>
+                    </div>
+                    <button id="btn-whatsapp" class="btn-finalizar">
+                        Finalizar pedido por WhatsApp
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- COLUMNA DERECHA: PANEL DE OPCIONES -->
+        <section class="panel-seccion">
+            <div class="bloque-opcion">
+                <h3 class="subtitulo-seccion">Paso 1: Elige tu base de chaquira</h3>
+                <div class="pulsera-grid">
+
+                    <!-- Tarjeta 1: AHORA TIENE data-cat="chaquiras" EN EL DIV PRINCIPAL -->
+                    <div class="tarjeta-charm" data-nombre="Patrón Chaquira Clásica" data-precio="100"
+                        data-cat="chaquiras" data-img="images/pulsera.png">
+                        <img src="images/pulsera.png" alt="Pulsera Clásica">
+                        <p class="nombre">Patrón Chaquira Clásica</p>
+                        <p class="precio">$100 MXN</p>
+                        <div class="contador-box">
+                            <button class="btn-cant btn-restar">-</button>
+                            <span class="cant-num">0</span>
+                            <button class="btn-cant btn-sumar">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta 2 -->
+                    <div class="tarjeta-charm" data-nombre="Patrón Chaquira Rectangular" data-precio="90"
+                        data-cat="chaquiras" data-img="images/pulsera2.png">
+                        <img src="images/pulsera2.png" alt="Pulsera Rectangular">
+                        <p class="nombre">Patrón Chaquira Rectangular</p>
+                        <p class="precio">$90 MXN</p>
+                        <div class="contador-box">
+                            <button class="btn-cant btn-restar">-</button>
+                            <span class="cant-num">0</span>
+                            <button class="btn-cant btn-sumar">+</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- PANEL DE COLORES DE CHAQUIRA -->
+            <div class="bloque-opcion">
+                <div class="colores-grid">
+
+                    <div class="grupo-seccion">
+                        <p class="titulo-opcion">Ajuste Personalizado</p>
+                        <label class="colores"><input type="radio" name="color-joyeria" value="Dorado" checked>
+                            <div style="background-color: gold;" class="muestra-color"></div>
+                            <p>Dorado</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-joyeria" value="Plateado">
+                            <div style="background-color: silver;" class="muestra-color"></div>
+                            <p>Plateado</p>
+                        </label>
+                    </div>
+
+                    <div class="grupo-seccion">
+                        <p class="titulo-opcion">Chaquira 1</p>
+                        <label class="colores"><input type="radio" name="color-chaquira1" value="Azul" checked>
+                            <div style="background-color: rgb(135, 214, 243);" class="muestra-color"></div>
+                            <p>Azul</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira1" value="Rosa">
+                            <div style="background-color: rgb(255, 120, 120);" class="muestra-color"></div>
+                            <p>Rosa</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira1" value="Amarillo">
+                            <div style="background-color: rgb(243, 226, 126);" class="muestra-color"></div>
+                            <p>Amarillo</p>
+                        </label>
+                    </div>
+
+                    <div class="grupo-seccion">
+                        <p class="titulo-opcion">Chaquira 2</p>
+                        <label class="colores"><input type="radio" name="color-chaquira2" value="Lila" checked>
+                            <div style="background-color: rgb(241, 135, 243);" class="muestra-color"></div>
+                            <p>Lila</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira2" value="Beige">
+                            <div style="background-color: rgb(233, 240, 196);" class="muestra-color"></div>
+                            <p>Beige</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira2" value="Morado">
+                            <div style="background-color: rgb(166, 122, 232);" class="muestra-color"></div>
+                            <p>Morado</p>
+                        </label>
+                    </div>
+
+                    <div class="grupo-seccion">
+                        <p class="titulo-opcion">Chaquira 3</p>
+                        <label class="colores"><input type="radio" name="color-chaquira3" value="Dorado">
+                            <div style="background-color: gold;" class="muestra-color"></div>
+                            <p>Dorado</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira3" value="Blanco">
+                            <div style="background-color: rgb(249, 241, 241);" class="muestra-color"></div>
+                            <p>Blanco</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira3" value="Verde">
+                            <div style="background-color: rgb(146, 231, 167);" class="muestra-color"></div>
+                            <p>Verde</p>
+                        </label>
+                        <label>
+                            <input type="radio" name="color-chaquira3" value="null" checked>
+                            <div class="ninguno">Ninguno / No aplica</div>
+                        </label>
+                    </div>
+
+                    <div class="grupo-seccion">
+                        <p class="titulo-opcion">Chaquira 4</p>
+                        <label class="colores"><input type="radio" name="color-chaquira4" value="Azul">
+                            <div style="background-color: rgb(135, 214, 243);" class="muestra-color"></div>
+                            <p>Azul</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira4" value="Plateado">
+                            <div style="background-color: silver;" class="muestra-color"></div>
+                            <p>Plateado</p>
+                        </label>
+                        <label class="colores"><input type="radio" name="color-chaquira4" value="Dorado">
+                            <div style="background-color: gold;" class="muestra-color"></div>
+                            <p>Dorado</p>
+                        </label>
+                        <label>
+                            <input type="radio" name="color-chaquira4" value="null" checked>
+                            <div class="ninguno">Ninguno / No aplica</div>
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+    <div style="height: 120px;"></div>
+    <div style="height: 20vh; min-height: 140px;"></div>
+</body>
+
+</html>

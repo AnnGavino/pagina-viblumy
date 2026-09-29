@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viblumy</title>
+    <link rel="icon" href="images/viblumy_icon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <img class="logo" src="./images/viblumy_icon.png" alt="Logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#catalogo">Crea tu Viblumy</a></li>
+                <li><a href="v_disponib.html">Disponible ahora</a></li>
+                <li><a href="v_contact.html">Contacto/Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- <div class="filtros-disponible">
+        <button class="btn-filtro-da activa" data-cat="todos">Todos</button>
+        <button class="btn-filtro-da" data-cat="joyeria">Joyería</button>
+        <button class="btn-filtro-da" data-cat="viblumy">Diseños de Viblumy</button>
+    </div>-->
+
+    <section class="catalogo-grid">
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="joyeria">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="viblumy">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="joyeria">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="viblumy">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="joyeria">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="viblumy">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="joyeria">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+        <article class="tarjeta-producto tarjeta-disponible" data-cat="viblumy">
+            <img src="images/DijeCorazon.png" alt="Dije Corazón" class="producto-img">
+            <div class="producto-info">
+                <h3 class="producto-titulo">Brazalette Rígido</h3>
+                <p class="producto-precio">$250 MXN</p>
+
+                <button type="button" class="btn-comprar btn-comprar-directo" data-nombre="Brazalette Rígido"
+                    data-precio="250">
+                    Comprar por WhatsApp
+                </button>
+            </div>
+        </article>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

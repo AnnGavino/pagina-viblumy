@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viblumy</title>
+  <link rel="icon" href="images/viblumy_icon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="./images/viblumy_icon.png" alt="Logo">
+    <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+    <nav class="nav" id="nav">
+      <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-circle"></i></button>
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#catalogo">Crea tu Viblumy</a></li>
+        <li><a href="v_disponib.html">Disponible ahora</a></li>
+        <li><a href="v_contact.html">Contacto/Pedidos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="personalizador-wrapper">
+    <!-- COLUMNA IZQUIERDA: LIENZO Y PREVISUALIZACIÓN -->
+    <section class="lienzo-seccion">
+      <h3 class="titulo-lienzo">Crea tu accesorio</h3>
+      <div class="lienzo-contenedor">
+        <!-- Foto de la base seleccionada -->
+        <img id="pulsera-actual" src="images/pulsera.png" alt="Pulsera Clásica" class="img-base">
+      </div>
+    </section>
+
+    <!-- TICKET FLOTANTE / LATERAL -->
+    <aside class="ticket-sección">
+      <div class="ticket-flotante">
+        <div class="ticket-contenido">
+          <h3>Tu pedido</h3>
+
+          <div id="lista-pedido">
+            <!-- JS agregará la base seleccionada y los charms -->
+          </div>
+
+          <div class="ticket-total">
+            <strong>Total: <span id="precio-total">$0 MXN</span></strong>
+          </div>
+
+          <button id="btn-whatsapp" class="btn-finalizar">
+            Finalizar pedido por WhatsApp
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- COLUMNA DERECHA: PANEL DE OPCIONES -->
+    <section class="panel-seccion">
+      
+      <!-- 1. SELECCIONAR CADENA BASE -->
+      <div class="bloque-opcion">
+        <h3 class="subtitulo-seccion">Paso 1: Elige tu base</h3>
+        <div class="pulsera-grid">
+          <!-- Cadena 1 -->
+          <div class="tarjeta-pulsera activa" data-nombre="La Clásica" data-estilo="clasica" data-img="images/pulsera.png" data-tipo="pulsera">
+            <img src="images/pulsera.png" alt="Pulsera Clásica">
+            <p class="nombre">La Clásica</p>
+            <p class="precio">$100 MXN</p>
+          </div>
+          <!-- Cadena 2 -->
+          <div class="tarjeta-pulsera" data-nombre="Rectangular" data-estilo="rectangular" data-img="images/pulsera2.png" data-tipo="pulsera">
+            <img src="images/pulsera2.png" alt="Pulsera Rectangular">
+            <p class="nombre">Rectangular</p>
+            <p class="precio">$90 MXN</p>
+          </div>
+        </div>
+      </div> <!-- Fin Paso 1 -->
+
+      <!-- 2. SELECCIONAR CHARMS -->
+      <div class="bloque-opcion">
+        <h3 class="subtitulo-seccion">Paso 2: Selecciona tus charms</h3>
+
+        <div class="filtros-contenedor">
+          <!-- Pestañas Principales (Categorías) -->
+          <div class="pestañas-categorias">
+            <button class="btn-cat activa" data-cat="todos">Todos</button>
+            <button class="btn-cat" data-cat="identidad">Identidad Personal</button>
+            <button class="btn-cat" data-cat="gustos">Mis Gustos</button>
+            <button class="btn-cat" data-cat="sueños">Mis Sueños</button>
+            <button class="btn-cat" data-cat="favoritos">Favoritos</button>
+            <button class="btn-cat" data-cat="estilo">Mi Estilo</button>
+            <button class="btn-cat" data-cat="especial">Especial</button>
+          </div>
+
+          <!-- Pestañas Secundarias (Subcategorías) -->
+          <!-- <div class="pestañas-subcategorias" id="subcategorias-identidad" style="display: none;">
+            <button class="btn-subcat" data-sub="iniciales">Iniciales</button>
+            <button class="btn-subcat" data-sub="zodiaco">Signos Zodiacales</button>
+          </div>
+
+          <div class="pestañas-subcategorias" id="subcategorias-gustos" style="display: none;">
+            <button class="btn-subcat" data-sub="musica">Música</button>
+            <button class="btn-subcat" data-sub="fotografia">Fotografía</button>
+            <button class="btn-subcat" data-sub="deporte">Deporte</button>
+            <button class="btn-subcat" data-sub="viaje">Viaje</button>
+          </div>
+
+          <div class="pestañas-subcategorias" id="subcategorias-sueños" style="display: none;">
+            <button class="btn-subcat" data-sub="estrella">Estrella</button>
+            <button class="btn-subcat" data-sub="luna">Luna</button>
+            <button class="btn-subcat" data-sub="corona">Corona</button>
+            <button class="btn-subcat" data-sub="avion">Avión</button>
+            <button class="btn-subcat" data-sub="llave">Llave</button>
+            <button class="btn-subcat" data-sub="angel">Ángel</button>
+            <button class="btn-subcat" data-sub="trebol">Trébol</button>
+          </div>
+
+          <div class="pestañas-subcategorias" id="subcategorias-favoritos" style="display: none;">
+            <button class="btn-subcat" data-sub="gato">Gato</button>
+            <button class="btn-subcat" data-sub="perro">Perro</button>
+            <button class="btn-subcat" data-sub="caballo">Caballo</button>
+            <button class="btn-subcat" data-sub="mariposa">Mariposa</button>
+            <button class="btn-subcat" data-sub="flor">Flor</button>
+            <button class="btn-subcat" data-sub="frutas">Frutas</button>
+            <button class="btn-subcat" data-sub="bebida">Bebida</button>
+          </div>
+
+          <div class="pestañas-subcategorias" id="subcategorias-estilo" style="display: none;">
+            <button class="btn-subcat" data-sub="moño">Moño</button>
+            <button class="btn-subcat" data-sub="corazon">Corazón</button>
+            <button class="btn-subcat" data-sub="estrella">Estrella</button>
+            <button class="btn-subcat" data-sub="flor">Flor</button>
+            <button class="btn-subcat" data-sub="geometrico">Geométrico</button>
+            <button class="btn-subcat" data-sub="angel">Ángel</button>
+            <button class="btn-subcat" data-sub="sol-luna">Sol / Luna</button>
+          </div>
+
+          <div class="pestañas-subcategorias" id="subcategorias-especial" style="display: none;">
+            <button class="btn-subcat" data-sub="abalorio">Circonita</button>
+            <button class="btn-subcat" data-sub="esmaltado">Esmaltado</button>
+            <button class="btn-subcat" data-sub="cuenta">Cuenta</button>
+          </div> -->
+
+          <!-- Cuadrícula de charms -->
+          <div class="charm-grid" id="catalogo-charms">
+            <!-- Dijes de Iniciales -->
+            <div class="tarjeta-charm" data-id="charm-A" data-nombre="Charm letra A" data-cat="identidad" data-img="images/flor_dije.png">
+              <img src="images/flor_dije.png" alt="letra A">
+              <p class="nombre">Charm letra A</p>
+              <p class="precio">$90 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes de Signos Zodiacales -->
+            <div class="tarjeta-charm" data-id="charm-Gemini" data-nombre="Charm Gemini" data-cat="identidad" data-img="images/cafe_dije.png">
+              <img src="images/cafe_dije.png" alt="Gemini">
+              <p class="nombre">Charm Gemini</p>
+              <p class="precio">$80 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+
+            <!-- Dijes de Símbolos -->
+            <div class="tarjeta-charm" data-id="charm-Musica" data-nombre="Charm Musica" data-cat="gustos" data-img="images/cafe_dije.png">
+              <img src="images/cafe_dije.png" alt="Musica">
+              <p class="nombre">Charm Música</p>
+              <p class="precio">$60 MXN</p>
+              <div class="contador-box">
+                <button class="btn-cant btn-restar">-</button>
+                <span class="cant-num">0</span>
+                <button class="btn-cant btn-sumar">+</button>
+              </div>
+            </div>
+          </div> <!-- Fin catalogo-charms -->
+        </div> <!-- Fin filtros-contenedor -->
+      </div> <!-- Fin Paso 2 -->
+
+      <!-- 3. ACOMODO (DENTRO DE PANEL-SECCION) -->
+      <div class="bloque-opcion seccion-acomodo">
+        <h3 class="subtitulo-seccion">Paso 3: ¿Cómo quieres el acomodo de tus charms?</h3>
+
+        <div class="acomodo-grid">
+          <!-- Opción 1: Agrupados -->
+          <label class="tarjeta-acomodo activa">
+            <input type="radio" name="estilo_acomodo" value="Agrupados (juntos al centro)" checked hidden>
+            <div class="acomodo-contenido">
+              <span class="icono-acomodo">📍</span>
+              <h4>Agrupados</h4>
+              <p>Todos los charms juntos y centrados.</p>
+            </div>
+          </label>
+
+          <!-- Opción 2: Distribuidos -->
+          <label class="tarjeta-acomodo">
+            <input type="radio" name="estilo_acomodo" value="Distribuidos (a lo largo)" hidden>
+            <div class="acomodo-contenido">
+              <span class="icono-acomodo">📏</span>
+              <h4>Distribuidos</h4>
+              <p>Espaciados a lo largo de toda la pulsera.</p>
+            </div>
+          </label>
+
+          <!-- Opción 3: A tu criterio / Asesoría -->
+          <label class="tarjeta-acomodo">
+            <input type="radio" name="estilo_acomodo" value="A tu criterio" hidden>
+            <div class="acomodo-contenido">
+              <span class="icono-acomodo">✨</span>
+              <h4>Diseño Viblumy</h4>
+              <p>Nosotras elegimos el mejor acomodo estético.</p>
+            </div>
+          </label>
+        </div>
+      </div> <!-- Fin Paso 3 -->
+
+    </section> <!-- Fin panel-seccion -->
+  </main>
+
+  <script src="script.js"></script>
+
+  <div style="height: 120px;"></div>
+  <div style="height: 20vh; min-height: 140px;"></div>
+</body>
+
+</html>

@@ -11,7 +11,7 @@ cerrar.addEventListener("click", () => {
 });
 
 /*OPCIONAL para al tocar en lo sombreado se cierre el menú*/
-/*document.addEventListener("click", (e) => {
+document.addEventListener("click", (e) => {
     if (!nav.contains(e.target) && !abrir.contains(e.target)) {
         nav.classList.remove("visible");
     }
@@ -21,7 +21,7 @@ document.querySelectorAll(".nav-list li a").forEach((enlace) => {
     enlace.addEventListener("click", () => {
         nav.classList.remove("visible");
     });
-});*/
+});
 
 let baseSeleccionada = null;
 

@@ -49,14 +49,22 @@ Color Grafito: #45484d
   font-weight: 400;
 }
 
-html, body {
+html,
+body {
   width: 100%;
   min-height: 100vh;
-  overflow-x: hidden; /* Evita desplazamiento horizontal no deseado */
-  overflow-y: auto;   /* Asegura que el scroll vertical funcione siempre */
+  overflow-x: hidden;
+  /* Evita desplazamiento horizontal no deseado */
+  overflow-y: auto;
+  /* Asegura que el scroll vertical funcione siempre */
   background-color: #fdfaf7;
   color: #45484d;
   scroll-behavior: smooth;
+
+}
+
+body {
+  padding-top: 60px; /* Evita que el header tape el inicio de la página */
 }
 
 /* HEADER */
@@ -66,9 +74,17 @@ header {
   justify-content: space-between;
   padding: 0.5rem;
   background-color: rgba(255, 250, 238, 0.85);
-  position: sticky;
   top: 0;
   z-index: 1000;
+  
+  /* Usar fixed garantiza que siempre te siga arriba */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  
   backdrop-filter: blur(2.5px);
   -webkit-backdrop-filter: blur(3px);
 }
@@ -163,7 +179,7 @@ header {
   position: relative;
   flex-direction: column;
   padding: 0.5rem;
-  margin-top: 100px;
+  margin-top: 400px;
   margin-bottom: -17px;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -207,17 +223,41 @@ header {
   font-weight: bold;
 }
 
-.boton-pulseras-charm { margin-left: 150px; margin-right: 10px; }
-.boton-pulseras-charm:hover { background-color: #f5aa95; }
+.boton-pulseras-charm {
+  margin-left: 150px;
+  margin-right: 10px;
+}
 
-.boton-colgantes-charm { margin-right: 40px; margin-left: 10px; }
-.boton-colgantes-charm:hover { background-color: #f5aa95; }
+.boton-pulseras-charm:hover {
+  background-color: #f5aa95;
+}
 
-.boton-pulseras-chaqui { margin-left: 150px; margin-right: 10px; }
-.boton-pulseras-chaqui:hover { background-color: #f5aa95; }
+.boton-colgantes-charm {
+  margin-right: 40px;
+  margin-left: 10px;
+}
 
-.boton-colgantes-chaqui { margin-right: 40px; margin-left: 10px; }
-.boton-colgantes-chaqui:hover { background-color: #f5aa95; }
+.boton-colgantes-charm:hover {
+  background-color: #f5aa95;
+}
+
+.boton-pulseras-chaqui {
+  margin-left: 150px;
+  margin-right: 10px;
+}
+
+.boton-pulseras-chaqui:hover {
+  background-color: #f5aa95;
+}
+
+.boton-colgantes-chaqui {
+  margin-right: 40px;
+  margin-left: 10px;
+}
+
+.boton-colgantes-chaqui:hover {
+  background-color: #f5aa95;
+}
 
 /* DISPONIBLE AHORA */
 .catalogo-grid {
@@ -285,7 +325,7 @@ header {
   flex-wrap: wrap;
 }
 
-.btn-filtro-da{
+.btn-filtro-da {
   display: inline-flex;
   background-color: transparent;
   color: #45484d;
@@ -298,7 +338,9 @@ header {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.btn-filtro-da:hover, .btn-filtro-da.activa{
+
+.btn-filtro-da:hover,
+.btn-filtro-da.activa {
   border-color: #9a4832;
 }
 
@@ -552,8 +594,11 @@ header {
   margin-top: 0.5rem;
 }
 
-.pestañas-categorias/*,
-.pestañas-subcategorias*/ {
+.pestañas-categorias
+
+/*,
+.pestañas-subcategorias*/
+  {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -615,7 +660,8 @@ header {
 
 .ticket-contenido:before {
   position: absolute;
-  top: -12px; /* Sintaxis corregida */
+  top: -12px;
+  /* Sintaxis corregida */
   left: 50%;
   transform: translateX(-50%);
   background-color: #9a4832;
@@ -739,7 +785,7 @@ header {
 }
 
 /* ANIMACIÓN: El círculo de chaquira crece y resalta al seleccionarse */
-.colores input[type="radio"]:checked + .muestra-color {
+.colores input[type="radio"]:checked+.muestra-color {
   transform: scale(1.25);
   border: 2px solid #9a4832;
   box-shadow: 0 0 6px rgba(154, 72, 50, 0.4);
@@ -747,6 +793,7 @@ header {
 
 /* AJUSTES RESPONSIVOS (MÓVIL) */
 @media screen and (max-width: 550px) {
+
   .abrir-menu,
   .cerrar-menu {
     display: block;
@@ -764,17 +811,26 @@ header {
     flex-direction: column;
     align-items: flex-end;
     gap: 1rem;
+
+    /* Posicionamiento que fuerza ocupar la pantalla completa del teléfono */
     position: fixed;
     top: 0;
+    left: auto;
     right: 0;
     bottom: 0;
-    height: 100vh;
+    
     width: 190px;
+    max-width: 200px;
+    height: 100vh;
+    height: 100dvh;
+
     background-color: #fffaee;
     padding: 2rem;
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
-    z-index: 2000;
-    overflow-y: auto; /* Habilita scroll dentro del menú lateral */
+    z-index: 20000;
+    overflow-y: auto;
+    
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 
   .nav.visible {
@@ -789,6 +845,10 @@ header {
 
   .nav-list li a {
     color: #45484d;
+  }
+
+  .contenedor-btns-contacto{
+    gap: 2.5rem;
   }
 
   .title-cat {

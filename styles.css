@@ -848,6 +848,11 @@ header {
     color: #45484d;
   }
 
+  .logo-hero {
+  margin-bottom: 0;
+  margin-top: 80px;
+}
+
   .contenedor-btns-contacto{
     gap: 2.5rem;
   }

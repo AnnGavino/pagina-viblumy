@@ -40,6 +40,26 @@ Color Grafito: #45484d
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Yeseva', sans-serif;
+  src: url(fonts/YesevaOne-Regular.ttf) format(truetype);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mango', sans-serif;
+  src: url(fonts/MangoCamise-Regular-BF6a6d9352645de.ttf) format(truetype);
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Averia';
+  src: url(fonts/AveriaSerifLibre-Regular.ttf) format(truetype);
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* RESET Y REGLAS DE DESPLAZAMIENTO GENERAL */
 * {
   margin: 0;
@@ -140,8 +160,8 @@ header {
 }
 
 .txt-inicio {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-family: 'Averia';
+  font-weight: lighter;
   font-size: 20px;
   color: #45484d;
   letter-spacing: 1px;
@@ -182,9 +202,9 @@ header {
   padding: 0.5rem;
   margin-top: 400px;
   margin-bottom: -17px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-  font-size: 30px;
+  font-family: 'Mango';
+  font-weight: bold;
+  font-size: 40px;
   color: #45484d;
   letter-spacing: 4px;
 }
@@ -195,11 +215,11 @@ header {
   flex-direction: column;
   padding: 3rem;
   margin-top: -40px;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  font-size: 20px;
+  font-family: 'Yeseva';
+  font-weight: bold;
+  font-size: 25px;
   color: #45484d;
-  letter-spacing: 6px;
+  letter-spacing: 3px;
 }
 
 .btn {
@@ -371,7 +391,7 @@ header {
 
 .txtc {
   font-family: 'Raleway', sans-serif;
-  font-weight: 400;
+  font-weight: 800;
   font-size: 17px;
   color: #45484d;
   letter-spacing: 1px;
@@ -417,7 +437,7 @@ header {
 .seccion-faq h3 {
   color: #45484d;
   font-family: 'Alice', sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   font-size: 1.1rem;
   text-align: center;
   margin-bottom: 1rem;
